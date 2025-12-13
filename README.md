@@ -4,6 +4,12 @@
 
 The main method is located in `src/main/java/CalendarRunner.java`
 
+## Build the jar file first
+```bash
+./gradlew jar
+```
+
+
 ### Three Execution Modes
 
 #### 1. GUI Mode (Default)
@@ -30,7 +36,7 @@ Saved event: Meeting
 #### 3. Headless Mode (Script Execution)
 Executes commands from a script file without user interaction.
 ```bash
-java -jar calendar-1.0.jar --mode headless commands.txt
+java -jar build/libs/calendar-1.0.jar --mode headless commands.txt
 ```
 Where `commands.txt` contains:
 ```

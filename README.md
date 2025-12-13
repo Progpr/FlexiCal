@@ -4,7 +4,7 @@
 
 The main method is located in `src/main/java/CalendarRunner.java`
 
-## Build the jar file first
+## Build the jar file first (Requires Java 11 to build as the application was made in java 11)
 ```bash
 ./gradlew jar
 ```

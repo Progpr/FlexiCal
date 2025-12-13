@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExecutableEditCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calendar</a> &gt; <a href="index.source.html" class="el_package">calendar.commandobject.editcommand</a> &gt; <span class="el_source">ExecutableEditCommand.java</span></div><h1>ExecutableEditCommand.java</h1><pre class="source lang-java linenums">package calendar.commandobject.editcommand;
+
+import calendar.commandobject.Command;
+import calendar.model.modelinterfaces.Calendar;
+import calendar.model.modelinterfaces.CalendarManager;
+
+/**
+ * The class calls whichever edit command object based on the command.
+ *
+ */
+
+public class ExecutableEditCommand implements Command {
+
+  private String command;
+  private CalendarManager calendarManager;
+
+  /**
+   * Constructs ExecutableEditCommand object.
+   *
+   * @param command         command in string format.
+   * @param calendarManager calendarManager object.
+   */
+
+<span class="fc" id="L24">  public ExecutableEditCommand(String command, CalendarManager calendarManager) {</span>
+<span class="fc" id="L25">    this.command = command;</span>
+<span class="fc" id="L26">    this.calendarManager = calendarManager;</span>
+<span class="fc" id="L27">  }</span>
+
+  @Override
+  public void execute() {
+
+<span class="fc" id="L32">    Calendar calendar = calendarManager.getCalendar(calendarManager.getCurrentCalendarName());</span>
+
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">    if (calendar == null) {</span>
+<span class="nc" id="L35">      System.out.println(&quot;Calendar Doesn't Exist&quot;);</span>
+<span class="nc" id="L36">      return;</span>
+    }
+
+<span class="fc" id="L39">    String input = command.split(&quot; &quot;)[1];</span>
+
+<span class="pc bpc" id="L41" title="1 of 5 branches missed.">    switch (input) {</span>
+      case &quot;event&quot;:
+<span class="fc" id="L43">        Command editSingleEventCmd = new EditEventCommand(command, calendarManager);</span>
+<span class="fc" id="L44">        editSingleEventCmd.execute();</span>
+<span class="fc" id="L45">        break;</span>
+
+      case &quot;events&quot;:
+<span class="fc" id="L48">        Command editMultipleEventsCmd = new EditEventsCommand(command, calendarManager);</span>
+<span class="fc" id="L49">        editMultipleEventsCmd.execute();</span>
+<span class="fc" id="L50">        break;</span>
+
+      case &quot;series&quot;:
+<span class="fc" id="L53">        Command editSeriesCmd = new EditSeriesCommand(command, calendarManager);</span>
+<span class="fc" id="L54">        editSeriesCmd.execute();</span>
+<span class="fc" id="L55">        break;</span>
+
+      case &quot;calendar&quot;:
+<span class="fc" id="L58">        Command editCalendarCmd = new EditCalendarCommand(command, calendarManager);</span>
+<span class="fc" id="L59">        editCalendarCmd.execute();</span>
+<span class="fc" id="L60">        break;</span>
+
+      default:
+<span class="nc" id="L63">        System.out.println(&quot;Error in &quot; + command + &quot;: Command not found&quot;);</span>
+        break;
+    }
+<span class="fc" id="L66">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

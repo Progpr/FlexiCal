@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ExecutableCopyCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calendar</a> &gt; <a href="index.source.html" class="el_package">calendar.commandobject.copy</a> &gt; <span class="el_source">ExecutableCopyCommand.java</span></div><h1>ExecutableCopyCommand.java</h1><pre class="source lang-java linenums">package calendar.commandobject.copy;
+
+import calendar.commandobject.Command;
+import calendar.model.modelinterfaces.CalendarManager;
+
+/**
+ * Class to execute the edit command based on.
+ * whether it is single event or multiple events
+ *
+ */
+
+public class ExecutableCopyCommand implements Command {
+  private String command;
+  private CalendarManager calendarManager;
+
+  /**
+   * constructor to build theExecutableCopyCommand class.
+   *
+   * @param command         user command
+   * @param calendarManager calendar manager object
+   */
+
+<span class="fc" id="L23">  public ExecutableCopyCommand(String command, CalendarManager calendarManager) {</span>
+<span class="fc" id="L24">    this.command = command;</span>
+<span class="fc" id="L25">    this.calendarManager = calendarManager;</span>
+<span class="fc" id="L26">  }</span>
+
+  @Override
+  public void execute() {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">    if (command.contains(&quot; event &quot;)) {</span>
+<span class="fc" id="L31">      CopyEventCommand copyEventCommand = new CopyEventCommand(command, calendarManager);</span>
+<span class="fc" id="L32">      copyEventCommand.execute();</span>
+
+<span class="fc bfc" id="L34" title="All 2 branches covered.">    } else if (command.contains(&quot; events &quot;)) {</span>
+<span class="fc" id="L35">      CopyEventsCommand copyEventsCommand = new CopyEventsCommand(command, calendarManager);</span>
+<span class="fc" id="L36">      copyEventsCommand.execute();</span>
+
+<span class="fc" id="L38">    } else {</span>
+<span class="fc" id="L39">      System.out.println(&quot;Invalid command&quot;);</span>
+    }
+<span class="fc" id="L41">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

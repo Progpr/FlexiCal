@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EventTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2025-12-13T01:33:05" hostname="Atharvas-MacBook-Pro.local" time="0.003">
+  <properties/>
+  <testcase name="testEventBuilderChaining" classname="EventTest" time="0.001"/>
+  <testcase name="testGetSubject" classname="EventTest" time="0.0"/>
+  <testcase name="testModifyLocationPhysical" classname="EventTest" time="0.0"/>
+  <testcase name="testGetEndDate" classname="EventTest" time="0.0"/>
+  <testcase name="testGetEndTime" classname="EventTest" time="0.0"/>
+  <testcase name="testCompareToMultiDay" classname="EventTest" time="0.0"/>
+  <testcase name="testGetStartDate" classname="EventTest" time="0.0"/>
+  <testcase name="testGetStartTime" classname="EventTest" time="0.0"/>
+  <testcase name="testToString" classname="EventTest" time="0.0"/>
+  <testcase name="testModifySubject" classname="EventTest" time="0.0"/>
+  <testcase name="testCompareTo" classname="EventTest" time="0.0"/>
+  <testcase name="testDuplicateEventDetection" classname="EventTest" time="0.0"/>
+  <testcase name="testCompareToSeries" classname="EventTest" time="0.0"/>
+  <testcase name="testModifyEndDate" classname="EventTest" time="0.0"/>
+  <testcase name="testModifyEndTime" classname="EventTest" time="0.0"/>
+  <testcase name="testModifyDescription" classname="EventTest" time="0.001"/>
+  <testcase name="testEventBuilderNullSubject" classname="EventTest" time="0.0"/>
+  <testcase name="testSubjectWithSpecialCharacters" classname="EventTest" time="0.0"/>
+  <testcase name="testModifySeriesId" classname="EventTest" time="0.0"/>
+  <testcase name="testEqualsIgnoresOptionalProperties" classname="EventTest" time="0.0"/>
+  <testcase name="testToStringWithOptionalProperties" classname="EventTest" time="0.0"/>
+  <testcase name="testHashCode" classname="EventTest" time="0.0"/>
+  <testcase name="testModifyStartDate" classname="EventTest" time="0.0"/>
+  <testcase name="testModifyStartTime" classname="EventTest" time="0.0"/>
+  <testcase name="testPartialOverlapNotEqual" classname="EventTest" time="0.0"/>
+  <testcase name="testEquals" classname="EventTest" time="0.0"/>
+  <testcase name="testGetEventSeriesId" classname="EventTest" time="0.0"/>
+  <testcase name="testEventBuilderNullStartDate" classname="EventTest" time="0.0"/>
+  <testcase name="testEventBuilderNullStartTime" classname="EventTest" time="0.0"/>
+  <testcase name="testEventBuilderDefaults" classname="EventTest" time="0.0"/>
+  <testcase name="testMultiWordSubject" classname="EventTest" time="0.0"/>
+  <testcase name="testModifyStatusPublic" classname="EventTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

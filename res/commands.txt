@@ -1,0 +1,60 @@
+create calendar --name Personal --timezone America/New_York
+create calendar --name Work --timezone America/Los_Angeles
+create calendar --name School --timezone Europe/London
+use calendar --name Personal
+create event Meeting from 2025-05-15T10:00 to 2025-05-15T11:00
+create event "Team Standup" from 2025-05-16T09:00 to 2025-05-16T09:30
+create event Lunch on 2025-05-15
+create event "All Day Conference" on 2025-05-20
+create event "Project Review" from 2025-05-17T14:00 to 2025-05-17T16:00
+create event Breakfast on 2025-05-18
+create event "Client Meeting" from 2025-05-19T11:00 to 2025-05-19T12:00
+create event "Doctor Appointment" from 2025-05-20T15:00 to 2025-05-20T15:45
+edit event location Meeting from 2025-05-15T10:00 to 2025-05-15T11:00 with "online"
+edit event subject "Team Standup" from 2025-05-16T09:00 to 2025-05-16T09:30 with "Daily Standup"
+edit event start Meeting from 2025-05-15T10:00 to 2025-05-15T11:00 with 2025-05-15T10:30
+edit event end Meeting from 2025-05-15T10:00 to 2025-05-15T11:00 with 2025-05-15T11:30
+edit event subject Lunch from 2025-05-15T08:00 to 2025-05-15T17:00 with "Team Lunch"
+edit event start "All Day Conference" from 2025-05-20T08:00 to 2025-05-20T17:00 with 2025-05-20T09:00
+edit event end "All Day Conference" from 2025-05-20T08:00 to 2025-05-20T17:00 with 2025-05-20T18:00
+print events on 2025-05-15
+print events on 2025-05-16
+print events from 2025-05-15T00:00 to 2025-05-20T23:59
+print events from 2025-05-19T10:00 to 2025-05-20T18:00
+show status on 2025-05-15T10:00
+show status on 2025-05-15T12:00
+show status on 2025-05-16T09:00
+show status on 2025-05-18T14:00
+create event "Weekly Standup" from 2025-05-19T09:00 to 2025-05-19T09:30 repeats MW for 5 times
+create event "Daily Scrum" from 2025-05-20T10:00 to 2025-05-20T10:15 repeats MTWRF until 2025-06-15
+create event "Gym Session" on 2025-05-21 repeats MWF for 8 times
+create event "Team Lunch" on 2025-05-22 repeats F until 2025-06-30
+create event "Sprint Planning" from 2025-05-26T14:00 to 2025-05-26T16:00 repeats R for 10 times
+create event "Yoga Class" on 2025-05-27 repeats TRS until 2025-07-15
+edit events subject "Weekly Standup" from 2025-05-19T09:00 with "Weekly Team Standup"
+edit events start "Daily Scrum" from 2025-05-20T10:00 with 2025-05-20T09:30
+edit series subject "Gym Session" from 2025-05-21T08:00 with "Morning Workout"
+edit series end "Team Lunch" from 2025-05-22T08:00 with 2025-05-22T13:00
+print events on 2025-05-19
+print events from 2025-05-20T00:00 to 2025-06-30T23:59
+export cal calendar_personal_export.csv
+use calendar --name Work
+create event "Quarterly Review" from 2025-06-01T14:00 to 2025-06-01T16:00
+create event "Product Launch" on 2025-06-15
+create event "Team Building" from 2025-06-10T09:00 to 2025-06-10T17:00
+edit calendar --name Work --property timezone America/Chicago
+copy event "Important Meeting" on 2025-05-15T10:30 --target Work to 2025-06-05T14:00
+use calendar --name Personal
+copy events on 2025-05-15 --target Work to 2025-06-20
+copy events between 2025-05-19 and 2025-05-21 --target School to 2025-07-01
+use calendar --name School
+create event "Final Exam" from 2025-07-10T09:00 to 2025-07-10T12:00
+create event "Study Group" from 2025-07-08T14:00 to 2025-07-08T16:00 repeats MWF for 3 times
+edit calendar --name School --property name University
+use calendar --name University
+print events from 2025-07-01T00:00 to 2025-07-15T23:59
+export cal university_schedule.ical
+use calendar --name Work
+export cal work_events.csv
+export cal work_calendar.ics
+exit

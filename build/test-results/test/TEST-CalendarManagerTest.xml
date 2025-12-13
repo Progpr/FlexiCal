@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CalendarManagerTest" tests="23" skipped="0" failures="0" errors="0" timestamp="2025-12-13T01:33:05" hostname="Atharvas-MacBook-Pro.local" time="0.011">
+  <properties/>
+  <testcase name="testGetCurrentCalendarName" classname="CalendarManagerTest" time="0.005"/>
+  <testcase name="testCompleteWorkflow" classname="CalendarManagerTest" time="0.002"/>
+  <testcase name="testValidateCalendarLoopIteration" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testSaveCalendarMultiple" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testValidateCalendarWithDuplicate" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testSaveCalendarDuplicate" classname="CalendarManagerTest" time="0.001"/>
+  <testcase name="testCreateCalendarValidTimezone" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testCreateCalendarEmptyCalendarName" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testGetCalendarEmptyStore" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testSetCurrentCalendarNameAs" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testGetCalendarNotExists" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testGetCalendarManagerStore" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testSetCurrentCalendarNameAsNull" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testSaveCalendarSuccess" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testCreateCalendarNullTimezone" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testValidateCalendarNoDuplicates" classname="CalendarManagerTest" time="0.001"/>
+  <testcase name="testSaveCalendarAfterException" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testCreateCalendarInvalidTimezone" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testGetCalendarExists" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testCreateCalendarCatchBlockExecution" classname="CalendarManagerTest" time="0.001"/>
+  <testcase name="testValidateCalendarIteratesAllEntries" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testCreateCalendarVariousValidTimezones" classname="CalendarManagerTest" time="0.0"/>
+  <testcase name="testConstructor" classname="CalendarManagerTest" time="0.0"/>
+  <system-out><![CDATA[Timezone not valid: Unknown time-zone ID: Invalid/Zone
+Calendar already exists!
+Calendar already exists!
+Calendar already exists!
+Timezone not valid: Calendar name cannot be empty
+Timezone not valid: zoneId
+Calendar already exists!
+Timezone not valid: Unknown time-zone ID: Invalid/Timezone
+Timezone not valid: Unknown time-zone ID: BadZone
+Timezone not valid: null
+Timezone not valid: zoneId
+Calendar already exists!
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EventSeriesImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calendar</a> &gt; <a href="index.source.html" class="el_package">calendar.model.modelimplementations</a> &gt; <span class="el_source">EventSeriesImpl.java</span></div><h1>EventSeriesImpl.java</h1><pre class="source lang-java linenums">package calendar.model.modelimplementations;
+
+import static calendar.model.modelimplementations.EventImpl.getEventBuilder;
+import static calendar.utility.GenerateSeriesId.generateSeriesId;
+
+import calendar.model.modelinterfaces.Calendar;
+import calendar.model.modelinterfaces.Event;
+import calendar.model.modelinterfaces.EventSeries;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import javax.management.openmbean.KeyAlreadyExistsException;
+
+/**
+ * Implementation of Event series object class.
+ * It stores the metadata of the series events.
+ *
+ */
+
+public class EventSeriesImpl implements EventSeries {
+  String eventSeriesId;
+  int occurrences;
+  LocalDate startDate;
+  LocalDate endDate;
+  List&lt;DayOfWeek&gt; repeatDays;
+
+
+  /**
+   * Constructs an Event series object.
+   *
+   * @param eventSeriesId generated series id from series builder is passed.
+   * @param occurrences   number of occurrences of the event in series are passed.
+   * @param startDate     start date of the event series.
+   * @param endDate       till date of the event series.
+   * @param repeatDays    days of the week on which the event is repeating in a series.
+   */
+  public EventSeriesImpl(String eventSeriesId, int occurrences, LocalDate startDate,
+<span class="fc" id="L39">                         LocalDate endDate, List&lt;DayOfWeek&gt; repeatDays) {</span>
+<span class="fc" id="L40">    this.eventSeriesId = eventSeriesId;</span>
+<span class="fc" id="L41">    this.occurrences = occurrences;</span>
+<span class="fc" id="L42">    this.startDate = startDate;</span>
+<span class="fc" id="L43">    this.endDate = endDate;</span>
+<span class="fc" id="L44">    this.repeatDays = repeatDays;</span>
+<span class="fc" id="L45">  }</span>
+
+  @Override
+  public int getOccurrences() {
+<span class="fc" id="L49">    return occurrences;</span>
+  }
+
+  @Override
+  public String getEventSeriesId() {
+<span class="fc" id="L54">    return this.eventSeriesId;</span>
+  }
+
+  @Override
+  public String getSubject() {
+<span class="fc" id="L59">    return &quot;&quot;;</span>
+  }
+
+  @Override
+  public LocalDate getFirstDate() {
+<span class="fc" id="L64">    return this.startDate;</span>
+  }
+
+  @Override
+  public LocalDate getLastDate() {
+<span class="fc" id="L69">    return this.endDate;</span>
+  }
+
+  @Override
+  public List&lt;DayOfWeek&gt; getRepeatDays() {
+<span class="fc" id="L74">    return this.repeatDays;</span>
+  }
+
+  @Override
+  public void constructSeriesEvents(Event event, Calendar calendar) {
+<span class="fc" id="L79">    int createdCount = 1;</span>
+<span class="fc" id="L80">    LocalDate current = event.getStartDate();</span>
+
+<span class="fc bfc" id="L82" title="All 2 branches covered.">    if (this.getOccurrences() &gt; 0) {</span>
+<span class="fc" id="L83">      current = current.plusDays(1);</span>
+
+<span class="fc bfc" id="L85" title="All 2 branches covered.">      while (createdCount &lt; this.getOccurrences()) {</span>
+<span class="fc bfc" id="L86" title="All 2 branches covered.">        if (this.repeatDays.contains(current.getDayOfWeek())) {</span>
+<span class="fc" id="L87">          Event newEvent = createCopyOfEventOnDate(event, current);</span>
+          try {
+<span class="fc" id="L89">            calendar.saveEvent(newEvent);</span>
+<span class="fc" id="L90">            createdCount++;</span>
+<span class="nc" id="L91">          } catch (KeyAlreadyExistsException e) {</span>
+<span class="nc" id="L92">            System.out.println(&quot;Skipping duplicate event on &quot; + current);</span>
+<span class="fc" id="L93">          }</span>
+        }
+<span class="fc" id="L95">        current = current.plusDays(1);</span>
+      }
+<span class="fc bfc" id="L97" title="All 2 branches covered.">    } else if (this.getLastDate() != null) {</span>
+<span class="fc" id="L98">      current = current.plusDays(1);</span>
+
+<span class="fc bfc" id="L100" title="All 2 branches covered.">      while (!current.isAfter(this.getLastDate())) {</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">        if (this.repeatDays.contains(current.getDayOfWeek())) {</span>
+<span class="fc" id="L102">          Event newEvent = createCopyOfEventOnDate(event, current);</span>
+          try {
+<span class="fc" id="L104">            calendar.saveEvent(newEvent);</span>
+<span class="nc" id="L105">          } catch (KeyAlreadyExistsException e) {</span>
+<span class="nc" id="L106">            System.out.println(&quot;Skipping duplicate event on &quot; + current);</span>
+<span class="fc" id="L107">          }</span>
+        }
+<span class="fc" id="L109">        current = current.plusDays(1);</span>
+      }
+    }
+<span class="fc" id="L112">  }</span>
+
+
+  /**
+   * Builder is being used to create event series object, this method gets the builder object.
+   *
+   * @return event series builder object.
+   */
+
+  public static EventSeriesBuilder getEventSeriesBuilder() {
+<span class="fc" id="L122">    return new EventSeriesBuilder();</span>
+  }
+
+
+  /**
+   * A helper method which creates a copy of the event that is passed on specific date.
+   * since it is a helper method for creating multiple objects of event for a series,
+   * it modifies the subject slightly.
+   *
+   * @param event the event of which we need to make the copy of.
+   * @param date  the date on which the copy needs to be created.
+   */
+
+  public static Event createCopyOfEventOnDate(Event event, LocalDate date) {
+<span class="fc" id="L136">    EventImpl.EventBuilder eventBuilder = getEventBuilder();</span>
+
+<span class="fc bfc" id="L138" title="All 2 branches covered.">    if (event.getSubject() != null) {</span>
+<span class="fc" id="L139">      eventBuilder.setSubject(event.getSubject());</span>
+    }
+<span class="fc bfc" id="L141" title="All 2 branches covered.">    if (date != null) {</span>
+<span class="fc" id="L142">      eventBuilder.setStartDate(date);</span>
+    }
+<span class="fc bfc" id="L144" title="All 2 branches covered.">    if (date != null) {</span>
+<span class="fc" id="L145">      eventBuilder.setEndDate(date);</span>
+    }
+<span class="pc bpc" id="L147" title="1 of 2 branches missed.">    if (event.getStartTime() != null) {</span>
+<span class="fc" id="L148">      eventBuilder.setStartTime(event.getStartTime());</span>
+    }
+<span class="pc bpc" id="L150" title="1 of 2 branches missed.">    if (event.getEndTime() != null) {</span>
+<span class="fc" id="L151">      eventBuilder.setEndTime(event.getEndTime());</span>
+    }
+<span class="fc bfc" id="L153" title="All 2 branches covered.">    if (event.getEventSeriesId() != null) {</span>
+<span class="fc" id="L154">      eventBuilder.setEventSeriesId(event.getEventSeriesId());</span>
+    }
+
+<span class="fc" id="L157">    return eventBuilder.build();</span>
+  }
+
+
+  /**
+   * An event series is being built using a builder.
+   * An event series builder class which helps build an event series.
+   *
+   */
+
+  public static class EventSeriesBuilder {
+    public String eventSeriesId;
+    public int occurrences;
+    public LocalDate startDate;
+    public LocalDate endDate;
+    public List&lt;DayOfWeek&gt; repeatDays;
+
+    /**
+     * Constructs the event series builder object.
+     *
+     */
+
+<span class="fc" id="L179">    public EventSeriesBuilder() {</span>
+<span class="fc" id="L180">      this.eventSeriesId = generateSeriesId();</span>
+<span class="fc" id="L181">      this.occurrences = 0;</span>
+<span class="fc" id="L182">      this.startDate = null;</span>
+<span class="fc" id="L183">      this.endDate = null;</span>
+<span class="fc" id="L184">      this.repeatDays = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L185">    }</span>
+
+
+    /**
+     * sets the number of occurrences in builder object.
+     *
+     * @param occurrences number of occurrences passed to builder.
+     * @return builder object with updated occurrences variable.
+     */
+
+    public EventSeriesBuilder setOccurrences(int occurrences) {
+<span class="fc" id="L196">      this.occurrences = occurrences;</span>
+<span class="fc" id="L197">      return this;</span>
+    }
+
+
+    /**
+     * sets the start date in event series builder object.
+     *
+     * @param startDate start date passed to builder.
+     * @return event series builder object with updated start date.
+     */
+
+    public EventSeriesBuilder setStartDate(LocalDate startDate) {
+<span class="fc" id="L209">      this.startDate = startDate;</span>
+<span class="fc" id="L210">      return this;</span>
+    }
+
+
+    /**
+     * sets the end date in the event series builder object.
+     *
+     * @param endDate till end date of the series passed.
+     * @return event series builder object with updated till/end date.
+     */
+
+    public EventSeriesBuilder setEndDate(LocalDate endDate) {
+<span class="fc" id="L222">      this.endDate = endDate;</span>
+<span class="fc" id="L223">      return this;</span>
+    }
+
+
+    /**
+     * sets the repeat days in the builder object.
+     *
+     * @param repeatDays days on which the event is going to repeat.
+     * @return builder object with updated repeat days.
+     */
+
+    public EventSeriesBuilder setRepeatDays(List&lt;DayOfWeek&gt; repeatDays) {
+<span class="fc" id="L235">      this.repeatDays = repeatDays;</span>
+<span class="fc" id="L236">      return this;</span>
+    }
+
+
+    /**
+     * builds the event series builder by calling the event series constructor.
+     * When the build is triggered, all the events in the series are created with it.
+     *
+     * @return Event series object.
+     */
+
+    public EventSeries build() {
+<span class="fc" id="L248">      return new EventSeriesImpl(this.eventSeriesId, this.occurrences,</span>
+          this.startDate, this.endDate, this.repeatDays);
+    }
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

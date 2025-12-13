@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ControllerTest" tests="62" skipped="0" failures="0" errors="0" timestamp="2025-12-13T01:33:05" hostname="Atharvas-MacBook-Pro.local" time="0.031">
+  <properties/>
+  <testcase name="testShowStatusCommandAvailable" classname="ControllerTest" time="0.002"/>
+  <testcase name="testUseCalendarCommandNonExistent" classname="ControllerTest" time="0.002"/>
+  <testcase name="testPrintErrorMessage" classname="ControllerTest" time="0.0"/>
+  <testcase name="testEditSeriesNoSeriesId" classname="ControllerTest" time="0.001"/>
+  <testcase name="testSetCalendarValid" classname="ControllerTest" time="0.001"/>
+  <testcase name="testCommandWithoutCalendarSelected" classname="ControllerTest" time="0.002"/>
+  <testcase name="testExecutableCopyInvalidCommand" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCopyEventsBetweenCommand" classname="ControllerTest" time="0.001"/>
+  <testcase name="testCreateSeriesSpanningMultipleDays" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCreateCalendarNullCalendarManager" classname="ControllerTest" time="0.001"/>
+  <testcase name="testPrintEventsRangeCommand" classname="ControllerTest" time="0.001"/>
+  <testcase name="testEditEventsCommand" classname="ControllerTest" time="0.001"/>
+  <testcase name="testShowStatusCommandBusy" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCreateEventCommandWithDateTime" classname="ControllerTest" time="0.001"/>
+  <testcase name="testCreateEventCommandAllDay" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCopyEventNotFound" classname="ControllerTest" time="0.001"/>
+  <testcase name="testEditEventsNewSeriesId" classname="ControllerTest" time="0.0"/>
+  <testcase name="testGoHeadlessModeWithFile" classname="ControllerTest" time="0.001"/>
+  <testcase name="testEditCalendarCommandChangeTimezone" classname="ControllerTest" time="0.001"/>
+  <testcase name="testPrintEventsOnDateNoEvents" classname="ControllerTest" time="0.0"/>
+  <testcase name="testPrintEventsOnDateMultipleEvents" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCreateSeriesAllDayWithUntil" classname="ControllerTest" time="0.001"/>
+  <testcase name="testCopyEventsOnDateCommand" classname="ControllerTest" time="0.0"/>
+  <testcase name="testEditSeriesWouldCreateDuplicate" classname="ControllerTest" time="0.001"/>
+  <testcase name="testEditEventsNoSeriesId" classname="ControllerTest" time="0.001"/>
+  <testcase name="testInvalidCommand" classname="ControllerTest" time="0.0"/>
+  <testcase name="testPrintRules" classname="ControllerTest" time="0.001"/>
+  <testcase name="testEditSeriesStartTime" classname="ControllerTest" time="0.001"/>
+  <testcase name="testConstructorValidParameters" classname="ControllerTest" time="0.0"/>
+  <testcase name="testUseCalendarCommandValid" classname="ControllerTest" time="0.0"/>
+  <testcase name="testPrintEventsRangeEmptyRange" classname="ControllerTest" time="0.0"/>
+  <testcase name="testEditCalendarCommandChangeName" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCopyEventCommand" classname="ControllerTest" time="0.001"/>
+  <testcase name="testAskForInstruction" classname="ControllerTest" time="0.0"/>
+  <testcase name="testConstructorNullOutput" classname="ControllerTest" time="0.0"/>
+  <testcase name="testGoInteractiveModeWithCommands" classname="ControllerTest" time="0.001"/>
+  <testcase name="testPrintFarewellMessage" classname="ControllerTest" time="0.0"/>
+  <testcase name="testWriteMessageIoException" classname="ControllerTest" time="0.0"/>
+  <testcase name="testWriteMessage" classname="ControllerTest" time="0.0"/>
+  <testcase name="testExportCalendarCommand" classname="ControllerTest" time="0.002"/>
+  <testcase name="testPrintWelcomeMessage" classname="ControllerTest" time="0.001"/>
+  <testcase name="testEditEventNullCalendar" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCreateCalendarCommandValid" classname="ControllerTest" time="0.0"/>
+  <testcase name="testProcessCommandsWithUseCommand" classname="ControllerTest" time="0.0"/>
+  <testcase name="testInitializeCommands" classname="ControllerTest" time="0.0"/>
+  <testcase name="testEditSeriesCommand" classname="ControllerTest" time="0.0"/>
+  <testcase name="testGoHeadlessModeFileNotFound" classname="ControllerTest" time="0.001"/>
+  <testcase name="testConstructorNullCalendarManager" classname="ControllerTest" time="0.0"/>
+  <testcase name="testConstructorNullInput" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCopyEventsEmptyDate" classname="ControllerTest" time="0.0"/>
+  <testcase name="testEditEventNonExistent" classname="ControllerTest" time="0.0"/>
+  <testcase name="testSetCalendarInvalid" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCreateSeriesCommandWithTimes" classname="ControllerTest" time="0.001"/>
+  <testcase name="testCreateSeriesCommandWithUntil" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCopyEventToNonExistentCalendar" classname="ControllerTest" time="0.0"/>
+  <testcase name="testGoInteractiveModeWithExit" classname="ControllerTest" time="0.001"/>
+  <testcase name="testHeadlessModeWithoutExit" classname="ControllerTest" time="0.0"/>
+  <testcase name="testEditCalendarNotFound" classname="ControllerTest" time="0.0"/>
+  <testcase name="testEditEventCommandSubject" classname="ControllerTest" time="0.001"/>
+  <testcase name="testCreateCalendarCommandInvalidTimezone" classname="ControllerTest" time="0.0"/>
+  <testcase name="testCreateCalendarMalformedTimezone" classname="ControllerTest" time="0.0"/>
+  <testcase name="testEditCalendarInvalidProperty" classname="ControllerTest" time="0.0"/>
+  <system-out><![CDATA[Available
+Error in command: use calendar --name NonExistentCal No calendar found with this name
+You can create a new calendar
+
+Saved event: SingleEvent starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Edited Event:Updated starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Event edited (single event, not part of a series)
+Using calendar: Calendar Name: TestCalendar Timezone: America/New_York
+Invalid command
+Saved event: RangeEvent1 starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: RangeEvent2 starting on 2025-06-16 at 14:00, ending on 2025-06-16 at 15:00, description:  , status Private, location Online
+Saved event: RangeEvent1_copy starting on 2025-06-20 at 10:00, ending on 2025-06-20 at 11:00, description:  , status Private, location Online
+Saved event: RangeEvent2_copy starting on 2025-06-21 at 14:00, ending on 2025-06-21 at 15:00, description:  , status Private, location Online
+
+Copy Summary:
+- Total events copied: 2
+- Standalone events: 2
+- Series processed: 0
+Error creating event series: Events in a series must start and end on the same day
+null
+Saved event: RangePrint1 starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: RangePrint2 starting on 2025-06-16 at 14:00, ending on 2025-06-16 at 15:00, description:  , status Private, location Online
+• RangePrint1 starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+• RangePrint2 starting on 2025-06-16 at 14:00, ending on 2025-06-16 at 15:00, description:  , status Private, location Online
+Saved event: EventsTest starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: EventsTest starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Edited Event:Updated Events starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Edited Event:Updated Events starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Edited 2 event(s) in the series
+Saved event: BusyEvent starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Busy
+Saved event: Team Meeting starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: Conference starting on 2025-07-20 at 08:00, ending on 2025-07-20 at 17:00, description:  , status Private, location Online
+Created event: Conference starting on 2025-07-20 at 08:00, ending on 2025-07-20 at 17:00, description:  , status Private, location Online
+Event not found: NonExistent at 2025-06-15T10:00
+Saved event: Series starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: Series starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+new property value cannot be the same as old property value
+Edited Event: Series starting on 2025-06-15 at 09:30, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Edited Event: Series starting on 2025-06-15 at 09:30, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Edited 2 event(s) in the series
+Successfully saved calendar: Calendar Name: TestCal Timezone: America/New_York
+Edited Calendar: Calendar Name: TestCalendar Timezone: Europe/Paris
+No events found.
+Saved event: Morning Meeting starting on 2025-06-15 at 09:00, ending on 2025-06-15 at 10:00, description:  , status Private, location Online
+Saved event: Lunch starting on 2025-06-15 at 12:00, ending on 2025-06-15 at 13:00, description:  , status Private, location Online
+Saved event: Evening Review starting on 2025-06-15 at 17:00, ending on 2025-06-15 at 18:00, description:  , status Private, location Online
+• Evening Review starting on 2025-06-15 at 17:00, ending on 2025-06-15 at 18:00, description:  , status Private, location Online
+• Lunch starting on 2025-06-15 at 12:00, ending on 2025-06-15 at 13:00, description:  , status Private, location Online
+• Morning Meeting starting on 2025-06-15 at 09:00, ending on 2025-06-15 at 10:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-06-01 at 08:00, ending on 2025-06-01 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-06-06 at 08:00, ending on 2025-06-06 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-06-13 at 08:00, ending on 2025-06-13 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-06-20 at 08:00, ending on 2025-06-20 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-06-27 at 08:00, ending on 2025-06-27 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-07-04 at 08:00, ending on 2025-07-04 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-07-11 at 08:00, ending on 2025-07-11 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-07-18 at 08:00, ending on 2025-07-18 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-07-25 at 08:00, ending on 2025-07-25 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Lunch starting on 2025-08-01 at 08:00, ending on 2025-08-01 at 17:00, description:  , status Private, location Online
+Event Series created.
+Saved event: Event1 starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: Event2 starting on 2025-06-15 at 14:00, ending on 2025-06-15 at 15:00, description:  , status Private, location Online
+Saved event: Event1_copy starting on 2025-06-20 at 10:00, ending on 2025-06-20 at 11:00, description:  , status Private, location Online
+Saved event: Event2_copy starting on 2025-06-20 at 14:00, ending on 2025-06-20 at 15:00, description:  , status Private, location Online
+Successfully copied 2 events.
+Saved event: Existing starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: Series starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Edited Event:Existing starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Edited 1 event(s) in the series
+Saved event: SingleEvent starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Edited Event:Updated starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Event edited (single event, not part of a series)
+Saved event: Series starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: Series starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+new property value cannot be the same as old property value
+Edited Event: Series starting on 2025-06-15 at 09:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+new property value cannot be the same as old property value
+Edited Event: Series starting on 2025-06-16 at 09:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Edited 2 event(s) in the series
+Using calendar: Calendar Name: TestCalendar Timezone: America/New_York
+No events found.
+Edited Calendar: Calendar Name: UpdatedCalendar Timezone: America/New_York
+Saved event: ToCopy starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: ToCopy_copy starting on 2025-06-20 at 14:00, ending on 2025-06-20 at 15:00, description:  , status Private, location Online
+Event has been copied successfully!
+Successfully saved calendar: Calendar Name: WorkCal Timezone: America/New_York
+Using calendar: Calendar Name: WorkCal Timezone: America/New_York
+Saved event: ExportTest starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Calendar successfully exported to CSV as: /Users/atharvapatil/Documents/CS5010/Calendar/FlexiCal/FlexiCal/test_export.csv
+Successfully saved calendar: Calendar Name: PersonalCal Timezone: Europe/London
+Using calendar: Calendar Name: NewCalendar Timezone: Europe/London
+Saved event: SeriesEvent starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Saved event: SeriesEvent starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Edited Event:Updated Series starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Edited Event:Updated Series starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Edited 2 event(s) in the series
+Error reading file: nonexistent.txt (No such file or directory)
+Successfully copied 0 events.
+Event not found
+Saved event: Daily Standup starting on 2025-06-01 at 09:00, ending on 2025-06-01 at 09:30, description:  , status Private, location Online
+Saved event: Daily Standup starting on 2025-06-02 at 09:00, ending on 2025-06-02 at 09:30, description:  , status Private, location Online
+Saved event: Daily Standup starting on 2025-06-04 at 09:00, ending on 2025-06-04 at 09:30, description:  , status Private, location Online
+Saved event: Daily Standup starting on 2025-06-06 at 09:00, ending on 2025-06-06 at 09:30, description:  , status Private, location Online
+Saved event: Daily Standup starting on 2025-06-09 at 09:00, ending on 2025-06-09 at 09:30, description:  , status Private, location Online
+Event Series created.
+Saved event: Weekly Review starting on 2025-06-01 at 08:00, ending on 2025-06-01 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Review starting on 2025-06-06 at 08:00, ending on 2025-06-06 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Review starting on 2025-06-13 at 08:00, ending on 2025-06-13 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Review starting on 2025-06-20 at 08:00, ending on 2025-06-20 at 17:00, description:  , status Private, location Online
+Saved event: Weekly Review starting on 2025-06-27 at 08:00, ending on 2025-06-27 at 17:00, description:  , status Private, location Online
+Event Series created.
+Saved event: ToCopy starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Event, target calendar, and target date/time cannot be null
+Successfully saved calendar: Calendar Name: TestCal Timezone: America/New_York
+Using calendar: Calendar Name: TestCal Timezone: America/New_York
+Saved event: Original starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Edited Event:Updated Subject starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Timezone not valid: Unknown time-zone ID: InvalidZone
+null
+Timezone not valid: Unknown time-zone ID: NewYork
+null
+Invalid property
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

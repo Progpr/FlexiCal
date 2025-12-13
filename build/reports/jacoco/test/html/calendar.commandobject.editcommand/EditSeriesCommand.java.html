@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>EditSeriesCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calendar</a> &gt; <a href="index.source.html" class="el_package">calendar.commandobject.editcommand</a> &gt; <span class="el_source">EditSeriesCommand.java</span></div><h1>EditSeriesCommand.java</h1><pre class="source lang-java linenums">package calendar.commandobject.editcommand;
+
+import static calendar.commandobject.ExtractCommandHelper.editSingleEvent;
+import static calendar.commandobject.ExtractCommandHelper.extractDateTimeString;
+import static calendar.commandobject.ExtractCommandHelper.extractEventSubject;
+import static calendar.commandobject.ExtractCommandHelper.extractNewPropertyValue;
+import static calendar.commandobject.ExtractCommandHelper.extractProperty;
+import static calendar.commandobject.ExtractCommandHelper.wouldCreateDuplicate;
+
+import calendar.commandobject.Command;
+import calendar.model.modelinterfaces.Calendar;
+import calendar.model.modelinterfaces.CalendarManager;
+import calendar.model.modelinterfaces.Event;
+import calendar.model.modelutility.EventKey;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Command object to process, when entire series gets edited.
+ */
+
+public class EditSeriesCommand implements Command {
+  private CalendarManager calendarManager;
+  private String command;
+
+  /**
+   * Constructs edit series command object.
+   *
+   * @param command         command in string format.
+   * @param calendarManager calendarManager object.
+   */
+
+<span class="fc" id="L35">  public EditSeriesCommand(String command, CalendarManager calendarManager) {</span>
+<span class="fc" id="L36">    this.command = command;</span>
+<span class="fc" id="L37">    this.calendarManager = calendarManager;</span>
+<span class="fc" id="L38">  }</span>
+
+  @Override
+  public void execute() {
+    try {
+<span class="fc" id="L43">      Calendar calendar = getActiveCalendar();</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">      if (calendar == null) {</span>
+<span class="nc" id="L45">        return;</span>
+      }
+
+<span class="fc" id="L48">      Event targetEvent = findTargetEvent(calendar);</span>
+<span class="pc bpc" id="L49" title="1 of 2 branches missed.">      if (targetEvent == null) {</span>
+<span class="nc" id="L50">        return;</span>
+      }
+
+<span class="fc" id="L53">      String property = extractProperty(command);</span>
+<span class="fc" id="L54">      String newValue = extractNewPropertyValue(command, property);</span>
+
+<span class="fc bfc" id="L56" title="All 2 branches covered.">      if (isStandaloneEvent(targetEvent)) {</span>
+<span class="fc" id="L57">        handleStandaloneEvent(targetEvent, property, newValue, calendar);</span>
+<span class="fc" id="L58">        return;</span>
+      }
+
+<span class="fc" id="L61">      handleSeriesEdit(targetEvent, property, newValue, calendar);</span>
+
+<span class="nc" id="L63">    } catch (Exception e) {</span>
+<span class="nc" id="L64">      System.out.println(&quot;Error editing series: &quot; + e.getMessage());</span>
+<span class="fc" id="L65">    }</span>
+<span class="fc" id="L66">  }</span>
+
+  /**
+   * Gets the currently active calendar.
+   *
+   * @return the active calendar or null if it doesn't exist
+   */
+
+  private Calendar getActiveCalendar() {
+<span class="fc" id="L75">    Calendar calendar = calendarManager.getCalendar(calendarManager.getCurrentCalendarName());</span>
+<span class="pc bpc" id="L76" title="1 of 2 branches missed.">    if (calendar == null) {</span>
+<span class="nc" id="L77">      System.out.println(&quot;Calendar Doesn't Exist&quot;);</span>
+    }
+<span class="fc" id="L79">    return calendar;</span>
+  }
+
+  /**
+   * Finds the target event based on the command parameters.
+   *
+   * @param calendar the calendar to search in
+   * @return the target event or null if not found
+   */
+
+  private Event findTargetEvent(Calendar calendar) {
+<span class="fc" id="L90">    String dateTimeStr = extractDateTimeString(command);</span>
+<span class="fc" id="L91">    LocalDateTime dateTime = LocalDateTime.parse(dateTimeStr);</span>
+<span class="fc" id="L92">    String subject = extractEventSubject(command);</span>
+
+<span class="fc" id="L94">    Event targetEvent = findEventByDateTimeAndSubject(calendar, dateTime, subject);</span>
+
+<span class="pc bpc" id="L96" title="1 of 2 branches missed.">    if (targetEvent == null) {</span>
+<span class="nc" id="L97">      System.out.println(&quot;Event not found with subject '&quot; + subject + &quot;' at &quot; + dateTimeStr);</span>
+    }
+
+<span class="fc" id="L100">    return targetEvent;</span>
+  }
+
+  /**
+   * Finds an event by date, time, and subject.
+   *
+   * @param calendar the calendar to search in
+   * @param dateTime the date and time of the event
+   * @param subject  the subject of the event
+   * @return the matching event or null if not found
+   */
+
+  private Event findEventByDateTimeAndSubject(Calendar calendar, LocalDateTime dateTime,
+                                              String subject) {
+<span class="fc" id="L114">    List&lt;Event&gt; eventListOnDay = calendar.getEventsForDate(dateTime.toLocalDate());</span>
+
+<span class="pc bpc" id="L116" title="1 of 2 branches missed.">    for (Event ev : eventListOnDay) {</span>
+<span class="pc bpc" id="L117" title="1 of 2 branches missed.">      if (isMatchingEvent(ev, subject, dateTime)) {</span>
+<span class="fc" id="L118">        return ev;</span>
+      }
+<span class="nc" id="L120">    }</span>
+<span class="nc" id="L121">    return null;</span>
+  }
+
+  /**
+   * Checks if an event matches the given criteria.
+   *
+   * @param event    the event to check
+   * @param subject  the expected subject
+   * @param dateTime the expected date and time
+   * @return true if the event matches, false otherwise
+   */
+
+  private boolean isMatchingEvent(Event event, String subject, LocalDateTime dateTime) {
+<span class="pc bpc" id="L134" title="1 of 2 branches missed.">    return event.getSubject().equals(subject)</span>
+<span class="pc bpc" id="L135" title="1 of 2 branches missed.">        &amp;&amp; event.getStartDate().equals(dateTime.toLocalDate())</span>
+<span class="pc bpc" id="L136" title="1 of 2 branches missed.">        &amp;&amp; event.getStartTime().equals(dateTime.toLocalTime());</span>
+  }
+
+  /**
+   * Checks if an event is standalone (not part of a series).
+   *
+   * @param event the event to check
+   * @return true if the event is standalone, false otherwise
+   */
+
+  private boolean isStandaloneEvent(Event event) {
+<span class="fc bfc" id="L147" title="All 2 branches covered.">    return event.getEventSeriesId() == null;</span>
+  }
+
+  /**
+   * Handles editing of a standalone event.
+   *
+   * @param event    the event to edit
+   * @param property the property to edit
+   * @param newValue the new value for the property
+   * @param calendar the calendar containing the event
+   */
+
+  private void handleStandaloneEvent(Event event, String property, String newValue,
+                                     Calendar calendar) {
+<span class="pc bpc" id="L161" title="1 of 2 branches missed.">    if (wouldCreateDuplicate(event, property, newValue, calendar)) {</span>
+<span class="nc" id="L162">      System.out.println(&quot;Edit failed: Would create duplicate event&quot;);</span>
+<span class="nc" id="L163">      return;</span>
+    }
+<span class="fc" id="L165">    editSingleEvent(event, property, newValue);</span>
+<span class="fc" id="L166">    System.out.println(&quot;Event edited (single event, not part of a series)&quot;);</span>
+<span class="fc" id="L167">  }</span>
+
+  /**
+   * Handles editing of a series of events.
+   *
+   * @param targetEvent the target event in the series
+   * @param property    the property to edit
+   * @param newValue    the new value for the property
+   * @param calendar    the calendar containing the events
+   */
+
+  private void handleSeriesEdit(Event targetEvent, String property, String newValue,
+                                Calendar calendar) {
+<span class="fc" id="L180">    List&lt;Event&gt; eventsToEdit = collectSeriesEvents(targetEvent, calendar);</span>
+
+<span class="pc bpc" id="L182" title="1 of 2 branches missed.">    if (!validateSeriesEdit(eventsToEdit, property, newValue, calendar)) {</span>
+<span class="nc" id="L183">      return;</span>
+    }
+
+<span class="fc bfc" id="L186" title="All 2 branches covered.">    if (property.equals(&quot;start&quot;)) {</span>
+<span class="fc" id="L187">      editSeriesStartTime(eventsToEdit, newValue, calendar);</span>
+    } else {
+<span class="fc" id="L189">      editSeriesProperty(eventsToEdit, property, newValue, calendar);</span>
+    }
+
+<span class="fc" id="L192">    System.out.println(&quot;Edited &quot; + eventsToEdit.size() + &quot; event(s) in the series&quot;);</span>
+<span class="fc" id="L193">  }</span>
+
+  /**
+   * Collects all events in the same series.
+   *
+   * @param targetEvent the target event
+   * @param calendar    the calendar to search in
+   * @return list of events in the same series
+   */
+
+  private List&lt;Event&gt; collectSeriesEvents(Event targetEvent, Calendar calendar) {
+<span class="fc" id="L204">    List&lt;Event&gt; eventsToEdit = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L205">    Map&lt;EventKey, Event&gt; calendarStore = calendar.getCalendarStore();</span>
+<span class="fc" id="L206">    String originalSeriesId = targetEvent.getEventSeriesId();</span>
+
+<span class="fc bfc" id="L208" title="All 2 branches covered.">    for (Event event : calendarStore.values()) {</span>
+<span class="fc bfc" id="L209" title="All 2 branches covered.">      if (event.getEventSeriesId() != null</span>
+<span class="pc bpc" id="L210" title="1 of 2 branches missed.">          &amp;&amp; event.getEventSeriesId().equals(originalSeriesId)) {</span>
+<span class="fc" id="L211">        eventsToEdit.add(event);</span>
+      }
+<span class="fc" id="L213">    }</span>
+
+<span class="fc" id="L215">    return eventsToEdit;</span>
+  }
+
+  /**
+   * Validates if the series edit would create any duplicates.
+   *
+   * @param eventsToEdit the events to be edited
+   * @param property     the property being edited
+   * @param newValue     the new value
+   * @param calendar     the calendar
+   * @return true if edit is valid, false if it would create duplicates
+   */
+
+  private boolean validateSeriesEdit(List&lt;Event&gt; eventsToEdit, String property,
+                                     String newValue, Calendar calendar) {
+<span class="fc bfc" id="L230" title="All 2 branches covered.">    for (Event event : eventsToEdit) {</span>
+<span class="pc bpc" id="L231" title="1 of 2 branches missed.">      if (wouldCreateDuplicate(event, property, newValue, calendar)) {</span>
+<span class="nc" id="L232">        System.out.println(&quot;Edit failed: Would create duplicate event&quot;);</span>
+<span class="nc" id="L233">        return false;</span>
+      }
+<span class="fc" id="L235">    }</span>
+<span class="fc" id="L236">    return true;</span>
+  }
+
+  /**
+   * Edits the start time for all events in a series.
+   *
+   * @param eventsToEdit the events to edit
+   * @param newValue     the new start time value
+   * @param calendar     the calendar containing the events
+   */
+
+  private void editSeriesStartTime(List&lt;Event&gt; eventsToEdit, String newValue, Calendar calendar) {
+<span class="fc" id="L248">    LocalDateTime newDateTime = LocalDateTime.parse(newValue);</span>
+
+<span class="fc bfc" id="L250" title="All 2 branches covered.">    for (Event event : eventsToEdit) {</span>
+<span class="fc" id="L251">      Event oldSnapshot = createEventSnapshot(event);</span>
+
+<span class="fc" id="L253">      LocalDateTime newEventDateTime = LocalDateTime.of(</span>
+<span class="fc" id="L254">          event.getStartDate(),</span>
+<span class="fc" id="L255">          newDateTime.toLocalTime()</span>
+      );
+<span class="fc" id="L257">      editSingleEvent(event, &quot;start&quot;, newEventDateTime.toString());</span>
+
+<span class="fc" id="L259">      calendar.updateEventKey(oldSnapshot, event);</span>
+<span class="fc" id="L260">    }</span>
+<span class="fc" id="L261">  }</span>
+
+  /**
+   * Edits a property for all events in a series.
+   *
+   * @param eventsToEdit the events to edit
+   * @param property     the property to edit
+   * @param newValue     the new value
+   * @param calendar     the calendar containing the events
+   */
+
+  private void editSeriesProperty(List&lt;Event&gt; eventsToEdit, String property,
+                                  String newValue, Calendar calendar) {
+<span class="fc bfc" id="L274" title="All 2 branches covered.">    for (Event event : eventsToEdit) {</span>
+<span class="fc" id="L275">      Event oldSnapshot = createEventSnapshot(event);</span>
+<span class="fc" id="L276">      editSingleEvent(event, property, newValue);</span>
+<span class="fc" id="L277">      calendar.updateEventKey(oldSnapshot, event);</span>
+<span class="fc" id="L278">    }</span>
+<span class="fc" id="L279">  }</span>
+
+  /**
+   * Creates a snapshot of an event for update tracking.
+   *
+   * @param event the event to snapshot
+   * @return a new event instance with the same properties
+   */
+
+  private Event createEventSnapshot(Event event) {
+<span class="fc" id="L289">    Calendar calendar = calendarManager.getCalendar(calendarManager.getCurrentCalendarName());</span>
+<span class="fc" id="L290">    return calendar.createEvent(</span>
+<span class="fc" id="L291">        event.getSubject(),</span>
+<span class="fc" id="L292">        LocalDateTime.of(event.getStartDate(), event.getStartTime()),</span>
+<span class="fc" id="L293">        LocalDateTime.of(event.getEndDate(), event.getEndTime()),</span>
+<span class="fc" id="L294">        event.getEventSeriesId(),</span>
+        null,
+        null,
+        null
+    );
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

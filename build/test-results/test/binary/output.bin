@@ -1,0 +1,255 @@
+7Timezone not valid: Unknown time-zone ID: Invalid/Zone
+Calendar already exists!
+Calendar already exists!
+Calendar already exists!
+	2Timezone not valid: Calendar name cannot be empty
+Timezone not valid: zoneId
+Calendar already exists!
+;Timezone not valid: Unknown time-zone ID: Invalid/Timezone
+2Timezone not valid: Unknown time-zone ID: BadZone
+Timezone not valid: null
+Timezone not valid: zoneId
+Calendar already exists!
+ãSaved event: First Meeting starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+ ãSaved event: Daily Standup starting on 2025-06-02 at 09:00, ending on 2025-06-02 at 09:30, description:  , status Private, location Online
+ ãSaved event: Daily Standup starting on 2025-06-04 at 09:00, ending on 2025-06-04 at 09:30, description:  , status Private, location Online
+ ãSaved event: Daily Standup starting on 2025-06-06 at 09:00, ending on 2025-06-06 at 09:30, description:  , status Private, location Online
+ ãSaved event: Daily Standup starting on 2025-06-09 at 09:00, ending on 2025-06-09 at 09:30, description:  , status Private, location Online
+ ãSaved event: Daily Standup starting on 2025-06-11 at 09:00, ending on 2025-06-11 at 09:30, description:  , status Private, location Online
+ ãSaved event: Daily Standup starting on 2025-06-13 at 09:00, ending on 2025-06-13 at 09:30, description:  , status Private, location Online
+ ãSaved event: Daily Standup starting on 2025-06-16 at 09:00, ending on 2025-06-16 at 09:30, description:  , status Private, location Online
+ ãSaved event: Daily Standup starting on 2025-06-18 at 09:00, ending on 2025-06-18 at 09:30, description:  , status Private, location Online
+ ãSaved event: Daily Standup starting on 2025-06-20 at 09:00, ending on 2025-06-20 at 09:30, description:  , status Private, location Online
+"äSaved event: Team Meeting starting on 2025-06-03 at 14:00, ending on 2025-06-03 at 15:00, description:  , status Private, location Online
+"äSaved event: Team Meeting starting on 2025-06-05 at 14:00, ending on 2025-06-05 at 15:00, description:  , status Private, location Online
+"äSaved event: Team Meeting starting on 2025-06-10 at 14:00, ending on 2025-06-10 at 15:00, description:  , status Private, location Online
+"äSaved event: Team Meeting starting on 2025-06-12 at 14:00, ending on 2025-06-12 at 15:00, description:  , status Private, location Online
+"äSaved event: Team Meeting starting on 2025-06-17 at 14:00, ending on 2025-06-17 at 15:00, description:  , status Private, location Online
+"äSaved event: Team Meeting starting on 2025-06-19 at 14:00, ending on 2025-06-19 at 15:00, description:  , status Private, location Online
+"äSaved event: Team Meeting starting on 2025-06-24 at 14:00, ending on 2025-06-24 at 15:00, description:  , status Private, location Online
+"äSaved event: Team Meeting starting on 2025-06-26 at 14:00, ending on 2025-06-26 at 15:00, description:  , status Private, location Online
+$çSaved event: Morning Meeting starting on 2025-05-15 at 09:00, ending on 2025-05-15 at 10:00, description:  , status Private, location Online
+$ÉSaved event: Lunch starting on 2025-05-15 at 12:00, ending on 2025-05-15 at 13:00, description:  , status Private, location Online
+$àSaved event: Lunch_copy starting on 2025-06-20 at 09:00, ending on 2025-06-20 at 10:00, description:  , status Private, location Online
+$íSaved event: Morning Meeting_copy starting on 2025-06-20 at 06:00, ending on 2025-06-20 at 07:00, description:  , status Private, location Online
+$Successfully copied 2 events.
+'äSaved event: Series Event starting on 2025-05-14 at 10:00, ending on 2025-05-14 at 11:00, description:  , status Private, location Online
+'äSaved event: Series Event starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+'äSaved event: Series Event starting on 2025-05-16 at 10:00, ending on 2025-05-16 at 11:00, description:  , status Private, location Online
+'äSaved event: Series Event starting on 2025-05-17 at 10:00, ending on 2025-05-17 at 11:00, description:  , status Private, location Online
+'ICreating new series '3b4e8371-32b4-402c-85e7-6d3989cc5cd4' with 2 events
+'èSaved event: Series Event_copy starting on 2025-06-01 at 07:00, ending on 2025-06-01 at 08:00, description:  , status Private, location Online
+'èSaved event: Series Event_copy starting on 2025-06-02 at 07:00, ending on 2025-06-02 at 08:00, description:  , status Private, location Online
+'
+'Copy Summary:
+'- Total events copied: 2
+'- Standalone events: 0
+'- Series processed: 1
+(àSaved event: Standalone starting on 2025-05-15 at 09:00, ending on 2025-05-15 at 10:00, description:  , status Private, location Online
+(åSaved event: Series Event 1 starting on 2025-05-15 at 11:00, ending on 2025-05-15 at 12:00, description:  , status Private, location Online
+(åSaved event: Series Event 2 starting on 2025-05-15 at 14:00, ending on 2025-05-15 at 15:00, description:  , status Private, location Online
+(çSaved event: Standalone_copy starting on 2025-06-25 at 06:00, ending on 2025-06-25 at 07:00, description:  , status Private, location Online
+(ICreating new series '167e36f7-3723-4c04-ac28-ae39d606238c' with 2 events
+(ëSaved event: Series Event 1_copy starting on 2025-06-25 at 11:00, ending on 2025-06-25 at 12:00, description:  , status Private, location Online
+(ëSaved event: Series Event 2_copy starting on 2025-06-25 at 14:00, ending on 2025-06-25 at 15:00, description:  , status Private, location Online
+(Successfully copied 3 events.
+,åSaved event: Personal Event starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+,àSaved event: Work Event starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+-çSaved event: Morning Meeting starting on 2025-05-15 at 09:00, ending on 2025-05-15 at 10:00, description:  , status Private, location Online
+.áSaved event: Meeting 1 starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+.áSaved event: Meeting 2 starting on 2025-05-15 at 14:00, ending on 2025-05-15 at 15:00, description:  , status Private, location Online
+1ÜSaved event: Original starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+4ÖSaved event: Meeting starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+7ÖSaved event: Meeting starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+8ÖSaved event: Meeting starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+=âSaved event: Day 1 Event starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+=âSaved event: Day 2 Event starting on 2025-05-16 at 14:00, ending on 2025-05-16 at 15:00, description:  , status Private, location Online
+=âSaved event: Day 3 Event starting on 2025-05-17 at 09:00, ending on 2025-05-17 at 10:00, description:  , status Private, location Online
+=éSaved event: Day 2 Event_copy starting on 2025-07-02 at 19:00, ending on 2025-07-02 at 20:00, description:  , status Private, location Online
+=éSaved event: Day 3 Event_copy starting on 2025-07-03 at 14:00, ending on 2025-07-03 at 15:00, description:  , status Private, location Online
+=éSaved event: Day 1 Event_copy starting on 2025-07-01 at 15:00, ending on 2025-07-01 at 16:00, description:  , status Private, location Online
+=
+=Copy Summary:
+=- Total events copied: 3
+=- Standalone events: 3
+=- Series processed: 0
+>ÖSaved event: Meeting starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+@ãSaved event: Day 1 Meeting starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+@ãSaved event: Day 2 Meeting starting on 2025-05-16 at 10:00, ending on 2025-05-16 at 11:00, description:  , status Private, location Online
+@ãSaved event: Day 3 Meeting starting on 2025-05-17 at 10:00, ending on 2025-05-17 at 11:00, description:  , status Private, location Online
+BÖSaved event: Meeting starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+CÖSaved event: Meeting starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+CäSaved event: Meeting_copy starting on 2025-06-01 at 14:00, ending on 2025-06-01 at 15:00, description:  , status Private, location Online
+DäSaved event: Series Event starting on 2025-05-15 at 10:00, ending on 2025-05-15 at 11:00, description:  , status Private, location Online
+DèSaved event: Series Event_copy starting on 2025-06-10 at 07:00, ending on 2025-06-10 at 08:00, description:  , status Private, location Online
+DENote: Original event was part of series. Copied as standalone event.
+EâSaved event: EST Meeting starting on 2025-05-15 at 15:00, ending on 2025-05-15 at 16:00, description:  , status Private, location Online
+EéSaved event: EST Meeting_copy starting on 2025-06-01 at 12:00, ending on 2025-06-01 at 13:00, description:  , status Private, location Online
+GF
+Available
+GHVError in command: use calendar --name NonExistentCal No calendar found with this name
+GHYou can create a new calendar
+GH
+GJâSaved event: SingleEvent starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GJÖEdited Event:Updated starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GJ2Event edited (single event, not part of a series)
+GKGUsing calendar: Calendar Name: TestCalendar Timezone: America/New_York
+GMInvalid command
+GNâSaved event: RangeEvent1 starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GNâSaved event: RangeEvent2 starting on 2025-06-16 at 14:00, ending on 2025-06-16 at 15:00, description:  , status Private, location Online
+GNéSaved event: RangeEvent1_copy starting on 2025-06-20 at 10:00, ending on 2025-06-20 at 11:00, description:  , status Private, location Online
+GNéSaved event: RangeEvent2_copy starting on 2025-06-21 at 14:00, ending on 2025-06-21 at 15:00, description:  , status Private, location Online
+GN
+GNCopy Summary:
+GN- Total events copied: 2
+GN- Standalone events: 2
+GN- Series processed: 0
+GOSError creating event series: Events in a series must start and end on the same day
+GPnull
+GQâSaved event: RangePrint1 starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GQâSaved event: RangePrint2 starting on 2025-06-16 at 14:00, ending on 2025-06-16 at 15:00, description:  , status Private, location Online
+GQÄ‚Ä¢ RangePrint1 starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GQÄ‚Ä¢ RangePrint2 starting on 2025-06-16 at 14:00, ending on 2025-06-16 at 15:00, description:  , status Private, location Online
+GRàSaved event: EventsTest starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GRàSaved event: EventsTest starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+GRåEdited Event:Updated Events starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GRåEdited Event:Updated Events starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+GR Edited 2 event(s) in the series
+GSáSaved event: BusyEvent starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GSBusy
+GTäSaved event: Team Meeting starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GUàSaved event: Conference starting on 2025-07-20 at 08:00, ending on 2025-07-20 at 17:00, description:  , status Private, location Online
+GUäCreated event: Conference starting on 2025-07-20 at 08:00, ending on 2025-07-20 at 17:00, description:  , status Private, location Online
+GV1Event not found: NonExistent at 2025-06-15T10:00
+GWÑSaved event: Series starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GWÑSaved event: Series starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+GW<new property value cannot be the same as old property value
+GWÖEdited Event: Series starting on 2025-06-15 at 09:30, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GWÖEdited Event: Series starting on 2025-06-15 at 09:30, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+GW Edited 2 event(s) in the series
+GXOSuccessfully saved calendar: Calendar Name: TestCal Timezone: America/New_York
+GYDEdited Calendar: Calendar Name: TestCalendar Timezone: Europe/Paris
+GZNo events found.
+G[çSaved event: Morning Meeting starting on 2025-06-15 at 09:00, ending on 2025-06-15 at 10:00, description:  , status Private, location Online
+G[ÉSaved event: Lunch starting on 2025-06-15 at 12:00, ending on 2025-06-15 at 13:00, description:  , status Private, location Online
+G[åSaved event: Evening Review starting on 2025-06-15 at 17:00, ending on 2025-06-15 at 18:00, description:  , status Private, location Online
+G[É‚Ä¢ Evening Review starting on 2025-06-15 at 17:00, ending on 2025-06-15 at 18:00, description:  , status Private, location Online
+G[z‚Ä¢ Lunch starting on 2025-06-15 at 12:00, ending on 2025-06-15 at 13:00, description:  , status Private, location Online
+G[Ñ‚Ä¢ Morning Meeting starting on 2025-06-15 at 09:00, ending on 2025-06-15 at 10:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-06-01 at 08:00, ending on 2025-06-01 at 17:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-06-06 at 08:00, ending on 2025-06-06 at 17:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-06-13 at 08:00, ending on 2025-06-13 at 17:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-06-20 at 08:00, ending on 2025-06-20 at 17:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-06-27 at 08:00, ending on 2025-06-27 at 17:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-07-04 at 08:00, ending on 2025-07-04 at 17:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-07-11 at 08:00, ending on 2025-07-11 at 17:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-07-18 at 08:00, ending on 2025-07-18 at 17:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-07-25 at 08:00, ending on 2025-07-25 at 17:00, description:  , status Private, location Online
+G\äSaved event: Weekly Lunch starting on 2025-08-01 at 08:00, ending on 2025-08-01 at 17:00, description:  , status Private, location Online
+G\Event Series created.
+G]ÑSaved event: Event1 starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+G]ÑSaved event: Event2 starting on 2025-06-15 at 14:00, ending on 2025-06-15 at 15:00, description:  , status Private, location Online
+G]âSaved event: Event1_copy starting on 2025-06-20 at 10:00, ending on 2025-06-20 at 11:00, description:  , status Private, location Online
+G]âSaved event: Event2_copy starting on 2025-06-20 at 14:00, ending on 2025-06-20 at 15:00, description:  , status Private, location Online
+G]Successfully copied 2 events.
+G^ÜSaved event: Existing starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+G^ÑSaved event: Series starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+G^ÜEdited Event:Existing starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+G^ Edited 1 event(s) in the series
+G_âSaved event: SingleEvent starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+G_ÖEdited Event:Updated starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+G_2Event edited (single event, not part of a series)
+GbÑSaved event: Series starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GbÑSaved event: Series starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Gb<new property value cannot be the same as old property value
+GbÖEdited Event: Series starting on 2025-06-15 at 09:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+Gb<new property value cannot be the same as old property value
+GbÖEdited Event: Series starting on 2025-06-16 at 09:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Gb Edited 2 event(s) in the series
+GdGUsing calendar: Calendar Name: TestCalendar Timezone: America/New_York
+GeNo events found.
+GfKEdited Calendar: Calendar Name: UpdatedCalendar Timezone: America/New_York
+GgÑSaved event: ToCopy starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GgâSaved event: ToCopy_copy starting on 2025-06-20 at 14:00, ending on 2025-06-20 at 15:00, description:  , status Private, location Online
+Gg$Event has been copied successfully!
+GjOSuccessfully saved calendar: Calendar Name: WorkCal Timezone: America/New_York
+GjBUsing calendar: Calendar Name: WorkCal Timezone: America/New_York
+GnàSaved event: ExportTest starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GnzCalendar successfully exported to CSV as: /Users/atharvapatil/Documents/CS5010/Calendar/FlexiCal/FlexiCal/test_export.csv
+GqPSuccessfully saved calendar: Calendar Name: PersonalCal Timezone: Europe/London
+GrCUsing calendar: Calendar Name: NewCalendar Timezone: Europe/London
+GtâSaved event: SeriesEvent starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GtâSaved event: SeriesEvent starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+GtåEdited Event:Updated Series starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GtåEdited Event:Updated Series starting on 2025-06-16 at 10:00, ending on 2025-06-16 at 11:00, description:  , status Private, location Online
+Gt Edited 2 event(s) in the series
+Gu@Error reading file: nonexistent.txt (No such file or directory)
+GxSuccessfully copied 0 events.
+GyEvent not found
+G{ãSaved event: Daily Standup starting on 2025-06-01 at 09:00, ending on 2025-06-01 at 09:30, description:  , status Private, location Online
+G{ãSaved event: Daily Standup starting on 2025-06-02 at 09:00, ending on 2025-06-02 at 09:30, description:  , status Private, location Online
+G{ãSaved event: Daily Standup starting on 2025-06-04 at 09:00, ending on 2025-06-04 at 09:30, description:  , status Private, location Online
+G{ãSaved event: Daily Standup starting on 2025-06-06 at 09:00, ending on 2025-06-06 at 09:30, description:  , status Private, location Online
+G{ãSaved event: Daily Standup starting on 2025-06-09 at 09:00, ending on 2025-06-09 at 09:30, description:  , status Private, location Online
+G{Event Series created.
+G|ãSaved event: Weekly Review starting on 2025-06-01 at 08:00, ending on 2025-06-01 at 17:00, description:  , status Private, location Online
+G|ãSaved event: Weekly Review starting on 2025-06-06 at 08:00, ending on 2025-06-06 at 17:00, description:  , status Private, location Online
+G|ãSaved event: Weekly Review starting on 2025-06-13 at 08:00, ending on 2025-06-13 at 17:00, description:  , status Private, location Online
+G|ãSaved event: Weekly Review starting on 2025-06-20 at 08:00, ending on 2025-06-20 at 17:00, description:  , status Private, location Online
+G|ãSaved event: Weekly Review starting on 2025-06-27 at 08:00, ending on 2025-06-27 at 17:00, description:  , status Private, location Online
+G|Event Series created.
+G}ÑSaved event: ToCopy starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+G}<Event, target calendar, and target date/time cannot be null
+GOSuccessfully saved calendar: Calendar Name: TestCal Timezone: America/New_York
+GBUsing calendar: Calendar Name: TestCal Timezone: America/New_York
+GÅÜSaved event: Original starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GÅçEdited Event:Updated Subject starting on 2025-06-15 at 10:00, ending on 2025-06-15 at 11:00, description:  , status Private, location Online
+GÇ6Timezone not valid: Unknown time-zone ID: InvalidZone
+GÇnull
+GÉ2Timezone not valid: Unknown time-zone ID: NewYork
+GÉnull
+GÑInvalid property
+ÜâàSaved event: Test Event starting on 2025-01-02 at 09:00, ending on 2025-01-02 at 10:00, description:  , status Private, location Online
+ÜçàSaved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+ÜçàSaved event: Test Event starting on 2025-01-08 at 09:00, ending on 2025-01-08 at 10:00, description:  , status Private, location Online
+ÜçàSaved event: Test Event starting on 2025-01-10 at 09:00, ending on 2025-01-10 at 10:00, description:  , status Private, location Online
+ÜêàSaved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+ÜêEvent already exists
+ÜêàSaved event: Test Event starting on 2025-01-10 at 09:00, ending on 2025-01-10 at 10:00, description:  , status Private, location Online
+ÜòàSaved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+ÜòàSaved event: Test Event starting on 2025-01-08 at 09:00, ending on 2025-01-08 at 10:00, description:  , status Private, location Online
+ÜöàSaved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+ÜöEvent already exists
+ÜöàSaved event: Test Event starting on 2025-01-10 at 09:00, ending on 2025-01-10 at 10:00, description:  , status Private, location Online
+ÜõàSaved event: Test Event starting on 2025-01-02 at 09:00, ending on 2025-01-02 at 10:00, description:  , status Private, location Online
+ÜûàSaved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+ÜûàSaved event: Test Event starting on 2025-01-10 at 09:00, ending on 2025-01-10 at 10:00, description:  , status Private, location Online
+ÜûEvent already exists
+ÜûEvent already exists
+Ü¢àSaved event: Test Event starting on 2025-01-06 at 09:00, ending on 2025-01-06 at 10:00, description:  , status Private, location Online
+»ÀÖSaved event: Workout starting on 2024-11-20 at 06:00, ending on 2024-11-20 at 07:00, description:  , status Private, location Online
+»ÀÖSaved event: Workout starting on 2024-11-21 at 06:00, ending on 2024-11-21 at 07:00, description:  , status Private, location Online
+»ÀÖSaved event: Workout starting on 2024-11-22 at 06:00, ending on 2024-11-22 at 07:00, description:  , status Private, location Online
+»ÀÖSaved event: Workout starting on 2024-11-25 at 06:00, ending on 2024-11-25 at 07:00, description:  , status Private, location Online
+»À2024-11-20
+»ŒÖSaved event: MEETING starting on 2024-11-20 at 10:00, ending on 2024-11-20 at 11:00, description:  , status Private, location Online
+»—ÖSaved event: Meeting starting on 2024-11-20 at 10:00, ending on 2024-11-20 at 11:00, description:  , status Private, location Online
+»—ÖSaved event: Meeting starting on 2024-11-21 at 14:00, ending on 2024-11-21 at 15:00, description:  , status Private, location Online
+»“ÖSaved event: Meeting starting on 2024-11-20 at 10:00, ending on 2024-11-20 at 11:00, description:  , status Private, location Online
+»“2024-11-20
+»‘ÖSaved event: Meeting starting on 2024-11-20 at 10:00, ending on 2024-11-20 at 11:00, description:  , status Private, location Online
+»‘2024-11-20
+»‘Event already exists
+»‘2024-11-20
+»◊äSaved event: Team Meeting starting on 2024-11-20 at 10:00, ending on 2024-11-20 at 11:00, description:  , status Private, location Online
+»◊2024-11-20
+»ŸÜSaved event: Workshop starting on 2024-11-21 at 14:00, ending on 2024-11-21 at 16:00, description:  , status Private, location Online
+»Ÿ2024-11-21
+»Ÿ2024-11-21
+»⁄ÖSaved event: Meeting starting on 2024-11-20 at 10:00, ending on 2024-11-20 at 11:00, description:  , status Private, location Online
+»⁄2024-11-20
+»€2024-12-25
+»›ÖSaved event: Standup starting on 2024-11-20 at 09:00, ending on 2024-11-20 at 09:15, description:  , status Private, location Online
+»›ÖSaved event: Standup starting on 2024-11-22 at 09:00, ending on 2024-11-22 at 09:15, description:  , status Private, location Online
+»›ÖSaved event: Standup starting on 2024-11-25 at 09:00, ending on 2024-11-25 at 09:15, description:  , status Private, location Online
+»›2024-11-20

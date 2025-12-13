@@ -1,0 +1,79 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'jacoco'
+    id 'info.solidsoft.pitest' version '1.15.0'
+}
+
+group 'calendar'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+// Add JaCoCo version specification
+jacoco {
+    toolVersion = "0.8.11"  // Add this to fix the error
+}
+
+sourceSets {
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+    }
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+    // Remove TestNG if you're not using it, or configure test task properly
+    // testImplementation 'org.testng:testng:7.1.0'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'CalendarRunner'
+    }
+    // Fat JAR configuration
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+// Updated JaCoCo configuration for better compatibility
+tasks.jacocoTestReport {
+    dependsOn test
+    reports {
+        html.required = true
+        xml.required = false
+        csv.required = true
+    }
+}
+
+test {
+    useJUnit()  // Only use JUnit since that's what you're importing
+    finalizedBy jacocoTestReport
+    ignoreFailures = true
+}
+
+application {
+    mainClass = 'CalendarRunner'
+}
+
+
+
+// PIT Mutation Testing Configuration
+pitest {
+    targetClasses = ['calendar.*']  // Simplified pattern
+    targetTests = ['calendar.*']    // Should match your test package
+    pitestVersion = '1.15.8'
+    threads = 4
+    outputFormats = ['XML', 'HTML']
+    timestampedReports = false
+    testPlugin = 'junit'
+    verbose = true
+    exportLineCoverage = true
+    failWhenNoMutations = false
+}

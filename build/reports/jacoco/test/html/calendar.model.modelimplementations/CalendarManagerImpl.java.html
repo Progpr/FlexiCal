@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CalendarManagerImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">calendar</a> &gt; <a href="index.source.html" class="el_package">calendar.model.modelimplementations</a> &gt; <span class="el_source">CalendarManagerImpl.java</span></div><h1>CalendarManagerImpl.java</h1><pre class="source lang-java linenums">package calendar.model.modelimplementations;
+
+import calendar.model.modelinterfaces.Calendar;
+import calendar.model.modelinterfaces.CalendarManager;
+import java.time.ZoneId;
+import java.util.HashMap;
+import java.util.Map;
+import javax.management.openmbean.KeyAlreadyExistsException;
+
+/**
+ * Class to implement the calendar manager interface.
+ *
+ */
+
+public class CalendarManagerImpl implements CalendarManager {
+  private final Map&lt;String, Calendar&gt; calendarManagerStore;
+  private String currentCalendarName;
+
+  /**
+   * Constructor to construct the calendarManagerImpl class.
+   */
+
+<span class="fc" id="L23">  public CalendarManagerImpl() {</span>
+<span class="fc" id="L24">    this.calendarManagerStore = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L25">    this.currentCalendarName = null;</span>
+<span class="fc" id="L26">  }</span>
+
+  /**
+   * creates deep copy.
+   *
+   * @param nameOfCalendar name of calendar
+   * @param timeZone timezone
+   */
+
+<span class="fc" id="L35">  public CalendarManagerImpl(String nameOfCalendar, String timeZone) {</span>
+<span class="fc" id="L36">    this.calendarManagerStore = new HashMap&lt;&gt;();</span>
+<span class="fc" id="L37">    Calendar newCal = this.createCalendar(nameOfCalendar, timeZone);</span>
+<span class="fc" id="L38">    this.saveCalendar(newCal);</span>
+<span class="fc" id="L39">    this.currentCalendarName = nameOfCalendar;</span>
+<span class="fc" id="L40">  }</span>
+
+  @Override
+  public void setCurrentCalendarNameAs(String calendarName) {
+<span class="fc" id="L44">    this.currentCalendarName = calendarName;</span>
+<span class="fc" id="L45">  }</span>
+
+  @Override
+  public String getCurrentCalendarName() {
+<span class="fc" id="L49">    return this.currentCalendarName;</span>
+  }
+
+  private void validateCalendar(Calendar calendar) throws KeyAlreadyExistsException {
+<span class="fc bfc" id="L53" title="All 2 branches covered.">    for (Map.Entry&lt;String, Calendar&gt; entry : getCalendarManagerStore().entrySet()) {</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">      if (entry.getKey().equals(calendar.getCalendarName())) {</span>
+<span class="fc" id="L55">        throw new KeyAlreadyExistsException(&quot;Calendar already exists!&quot;);</span>
+      }
+<span class="fc" id="L57">    }</span>
+<span class="fc" id="L58">  }</span>
+
+  @Override
+  public Map&lt;String, Calendar&gt; getCalendarManagerStore() {
+<span class="fc" id="L62">    return this.calendarManagerStore;</span>
+  }
+
+  @Override
+  public Calendar createCalendar(String calendarName, String timeZone) {
+<span class="fc" id="L67">    ZoneId zoneId = null;</span>
+
+    try {
+<span class="fc" id="L70">      zoneId = ZoneId.of(timeZone);</span>
+<span class="fc" id="L71">      return new CalendarImpl(calendarName, zoneId);</span>
+<span class="fc" id="L72">    } catch (Exception e) {</span>
+<span class="fc" id="L73">      System.out.println(&quot;Timezone not valid: &quot; + e.getMessage());</span>
+<span class="fc" id="L74">      return null;</span>
+    }
+  }
+
+  @Override
+  public Calendar getCalendar(String calendarName) {
+<span class="fc bfc" id="L80" title="All 2 branches covered.">    if (calendarManagerStore.containsKey(calendarName)) {</span>
+<span class="fc" id="L81">      return calendarManagerStore.get(calendarName);</span>
+    }
+<span class="fc" id="L83">    return null;</span>
+  }
+
+  @Override
+  public void saveCalendar(Calendar calendar) {
+    try {
+<span class="fc" id="L89">      validateCalendar(calendar);</span>
+<span class="fc" id="L90">    } catch (KeyAlreadyExistsException e) {</span>
+<span class="fc" id="L91">      System.out.println(e.getMessage());</span>
+<span class="fc" id="L92">    }</span>
+
+<span class="fc" id="L94">    getCalendarManagerStore().put(calendar.getCalendarName(), calendar);</span>
+
+<span class="fc" id="L96">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

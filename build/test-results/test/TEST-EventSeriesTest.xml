@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="EventSeriesTest" tests="32" skipped="0" failures="0" errors="0" timestamp="2025-12-13T01:33:05" hostname="Atharvas-MacBook-Pro.local" time="0.004">
+  <properties/>
+  <testcase name="testConstructSeriesEventsNegativeOccurrences" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructorAllParameters" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testCreateCopyOfEventOnDateWithNullSubject" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsOccurrencesReachExactCount" classname="EventSeriesTest" time="0.001"/>
+  <testcase name="testGetSubject" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testCreateCopyOfEventOnDateWithNullEndTime" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testBuilderSetRepeatDays" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsWithEndDateHappyPath" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testGetOccurrences" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testBuilderSetStartDate" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsWithEndDateHandleException" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testCreateCopyOfEventOnDateWithNullSeriesId" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testCreateCopyOfEventOnDateAllFieldsNotNull" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testBuilderSetEndDate" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsWithEndDateSkipNonRepeatDays" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsNoOccurrencesNoEndDate" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testBuilderSetOccurrences" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsWithNullRepeatDays" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsWithOccurrencesHappyPath" classname="EventSeriesTest" time="0.001"/>
+  <testcase name="testGetLastDate" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsWithOccurrencesHandleException" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsWithEndDateAfterLastDate" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testCreateCopyOfEventOnDateWithNullDate" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testBuilderBuild" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsAllExceptionsInEndDate" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testGetEventSeriesBuilder" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testGetFirstDate" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructorWithNulls" classname="EventSeriesTest" time="0.001"/>
+  <testcase name="testConstructSeriesEventsWithOccurrencesSkipNonRepeatDays" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testConstructSeriesEventsZeroOccurrences" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testGetEventSeriesId" classname="EventSeriesTest" time="0.0"/>
+  <testcase name="testEventSeriesBuilderConstructor" classname="EventSeriesTest" time="0.0"/>
+  <system-out><![CDATA[Saved event: Test Event starting on 2025-01-02 at 09:00, ending on 2025-01-02 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-08 at 09:00, ending on 2025-01-08 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-10 at 09:00, ending on 2025-01-10 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+Event already exists
+Saved event: Test Event starting on 2025-01-10 at 09:00, ending on 2025-01-10 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-08 at 09:00, ending on 2025-01-08 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+Event already exists
+Saved event: Test Event starting on 2025-01-10 at 09:00, ending on 2025-01-10 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-02 at 09:00, ending on 2025-01-02 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-03 at 09:00, ending on 2025-01-03 at 10:00, description:  , status Private, location Online
+Saved event: Test Event starting on 2025-01-10 at 09:00, ending on 2025-01-10 at 10:00, description:  , status Private, location Online
+Event already exists
+Event already exists
+Saved event: Test Event starting on 2025-01-06 at 09:00, ending on 2025-01-06 at 10:00, description:  , status Private, location Online
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

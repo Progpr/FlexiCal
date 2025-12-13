@@ -9,14 +9,14 @@ The main method is located in `src/main/java/CalendarRunner.java`
 #### 1. GUI Mode (Default)
 Opens the graphical user interface for interactive calendar management.
 ```bash
-java -jar calendar-1.0.jar
+java -jar build/libs/calendar-1.0.jar
 ```
 Or simply double-click the JAR file.
 
 #### 2. Interactive Text Mode
 Opens a command-line interface for entering commands one at a time.
 ```bash
-java -jar calendar-1.0.jar --mode interactive
+java -jar build/libs/calendar-1.0.jar --mode interactive
 ```
 Example session:
 ```

@@ -1,114 +1,165 @@
-# Overview
+# USEME.md - Calendar Application User Guide
 
-In this iteration of this project, you will build a view
-for the calendar application, featuring a graphical user interface.
-This will allow a user to interactively create,edit, and view events in
-a digital calendar. The result of this iteration will be a calendar that
-a user can interact with in a text-based interface, a GUI, as well as use scripting in headless mode.
+## Running the Program
 
-# 1 Graphical View
+The main method is located in `src/main/java/CalendarRunner.java`
 
-## 1.1 General Constraints
+### Three Execution Modes
 
-1. You must use the Java Swing library to build the user interface of this application. To this end, you can use the examples discussed in the view module and any class in the official Java Swing library. You are not allowed to use any component or class that is not part of the JDK. 
+#### 1. GUI Mode (Default)
+Opens the graphical user interface for interactive calendar management.
+```bash
+java -jar calendar-1.0.jar
+```
+Or simply double-click the JAR file.
 
-2. The GUI should, at a minimum, support a *month view* of a calendar. A month view shows all the days of the current month. A user can navigate to another month in the future or in the past. You are free to add more views (e.g., weekly view, days view, etc.).
+#### 2. Interactive Text Mode
+Opens a command-line interface for entering commands one at a time.
+```bash
+java -jar calendar-1.0.jar --mode interactive
+```
+Example session:
+```
+> create event Meeting from 2025-05-15T10:00 to 2025-05-15T11:00
+Saved event: Meeting
+> print events on 2025-05-15
+- Meeting starting at 10:00, ending at 11:00
+> exit
+```
 
-3. The GUI must expose features listed and described in the next section.
+#### 3. Headless Mode (Script Execution)
+Executes commands from a script file without user interaction.
+```bash
+java -jar calendar-1.0.jar --mode headless commands.txt
+```
+Where `commands.txt` contains:
+```
+create event "Team Meeting" from 2025-05-15T10:00 to 2025-05-15T11:00
+print events on 2025-05-15
+export cal output.csv
+```
 
-4. The GUI should have support for multiple calendars in any timezone chosen by the user.
+## GUI Operations Guide
 
-5. You are expected to handle invalid user input via the GUI gracefully. Graceful error handling means that you must detect the cause of the error and inform the user with a useful message that does not leak implementation details but lets the user know how to fix the error.
+### Calendar Management
 
-6. The layout of the UI should be reasonable. Things should be in proper proportion, and laid out in a reasonable manner. **Buttons/text fields/labels that are oversized, or haphazardly arranged, even if functional, will result in a point deduction.**
+#### Creating a New Calendar
+- Click the **"Navigate calendars"** button in the toolbar
+- Click the **"+ Create New Calendar"** button in the left panel
+- In the dialog box:
+    - Enter a calendar name (e.g., "Work Calendar")
+    - Enter a timezone (e.g., "America/New_York", "Europe/London")
+    - Click **"Create"** to save or **"Cancel"** to close
 
-7. Each user interaction or user input must be reasonably user-friendly  (e.g. making the user type something when a less error-prone method is  possible is not good UI design). We do not expect snazzy, sophisticated  user-friendly programs. Our standard is: can a user unfamiliar with your code and technical documentation operate the program correctly **without reading your code and technical documentation?**
+#### Navigating Between Calendars
+- Click the **"Navigate calendars"** button in the toolbar
+- All available calendars will appear in the left panel
+- The current calendar is displayed in the toolbar as "Current: [Calendar Name] (Timezone)"
 
-8. Keep in mind that this is a graphical user interface for your program.  It is not a graphical way to use the same interaction as the text mode. The expectations of the user, and what the user is expected to enter, are not the same as when specifying script commands!
+#### Using a Calendar
+- Click on any calendar name in the left panel
+- Select **"Use Calendar"** from the popup menu
+- This calendar becomes the active calendar for all operations
 
-## 1.2 Expected Feature Set
+#### Editing Calendar Name
+- Click on a calendar name in the left panel
+- Select **"Edit Calendar Name"** from the popup menu
+- Enter the new name in the dialog box
+- Click **OK** to save changes
 
-The following features must be usable via your graphical user interface.
+#### Editing Calendar Timezone
+- Click on a calendar name in the left panel
+- Select **"Edit Calendar Timezone"** from the popup menu
+- Enter the new timezone (e.g., "Asia/Tokyo")
+- Click **OK** to save changes
 
-1. A user should be able to create a new calendar for a particular timezone.
+### Event Management
 
-2. A user should be able to select a calendar and create, edit, view events for the selected calendar.
+#### Viewing Events for a Specific Day
+- Click on any date in the calendar grid
+- The selected date will be highlighted in blue
+- All events for that date will appear in the left panel
+- Today's date is automatically highlighted when the application starts
 
-3. A user should know which calendar they are on when interacting with the GUI. The way you distinguish a calendar is upto you. One example would be to color code the different calendars.
+#### Creating a New Event
+- Select a date by clicking on it in the calendar
+- Click the **"+ Create New Event"** button in the left panel
+- In the Create Event dialog:
+    - **Event Name**: Enter the event title
+    - **Status**: Enter event status (e.g., "Confirmed", "Tentative")
+    - **Start Date**: Automatically filled with selected date
+    - **End Date**: Enter end date (YYYY-MM-DD format)
+    - **Start Time**: Enter start time (HH:mm format, e.g., "14:30")
+    - **End Time**: Enter end time (HH:mm format)
+    - **Location**: Enter event location
+    - **Description**: Enter event description
+- Click **"Create Event"** to save or **"Cancel"** to close
 
-4. A user should not be forced to create a new calendar. Instead, the GUI should allow a user to work with a default calendar in the user's current timezone based on their system setting.
+#### Creating a Recurring Event
+- Follow the steps for creating a new event
+- Check the **"Recurring Event"** checkbox
+- Additional fields will appear:
+    - **Repeats**: Enter pattern (e.g., "Daily", "Weekly", "Mon,Wed,Fri")
+    - Choose either:
+        - **Until**: Select end date for recurrence
+        - **No. of times**: Enter number of occurrences
+- Click **"Create Event"** to save the series
 
-5. A user should be able to select a specific day of a month and view all events scheduled on that day in the calendar's timezone.
+#### Editing an Event
+- Select a date to view its events
+- Click on the event button in the left panel
+- The Edit Event dialog will open with current event details based on if its part of a series or single event
+- Choose the field you want to modify from drop down and enter new value you want to set
+- For recurring events, choose to edit:
+    - All events in the series
+    - This and all future events
+- There will be radio button to chose from above options
+- Click **"Save Changes"** to update
 
-6. A user should be able to create a new event on a selected day of a month. The event can be a single or recurring event. For recurring events, a user should be able to specify the weekdays on which the event will repeat and the frequency in terms of number of occurrences or until an end date.
+### Navigation Features
 
-7. A user should be able to select a specific day of a month and edit events.
+#### Navigating Between Months
+- Click **"Previous month"** button to go to the previous month
+- Click **"Next month"** button to go to the next month
+- Current month and year are displayed in the center of the toolbar
 
-The user should be able to identify a single event and edit it. The user should also be able to identify multiple events with the same name, possibly from a user-specific point in time, and edit them together.
+#### Searching for Events
+- Enter search terms in the **Search** field in the toolbar (top-right)
+- Press **Enter** to search
+- Search results will appear in the left panel
+- Click **"Clear Search"** to return to the normal view
 
+### Calendar Display Features
 
-## 1.3 Design Considerations
+- **Current Date**: Automatically highlighted in light blue
+- **Selected Date**: Highlighted in blue when clicked
+- **Month View**: Shows all days of the current month in a grid format
+- **Day Headers**: Sunday through Saturday labels at the top
+- **Empty Days**: Disabled and shown in white for days outside the current month
 
-Carefully design the interaction between a view and a controller,
-and formalize the interactions with view and controller interfaces.
-You may design a single controller that manages the program in
-interactive, headless and GUI modes. Different controllers for different views are also possible if the views are very different from each other.
-However, be mindful of the MVC principles and separation between  the model, view and controller. When designing, always ask: "can I change one part with no/minimal changes to the others?"
+## Default Behavior
 
-## 1.4 Testing
+- On startup, a default calendar is created in your system's timezone
+- The current date is automatically selected
+- Events for the current date are displayed in the left panel
+- You can immediately start creating events without creating a new calendar
 
-Think carefully about which parts of the program require testing. For example, you are not expected to test whether a particular button click produces the desired result. In that sense, testing the actual GUI is optional. However, you should test whether the controller does what it is supposed to in reaction to this happening.
+## Tips for Best Use
 
-# 2 Program Execution
+1. **Multiple Calendars**: Create separate calendars for different purposes (Work, Personal, School)
+2. **Timezone Management**: Each calendar maintains its own timezone for accurate scheduling
+3. **Quick Navigation**: Use the month navigation buttons to quickly browse future/past events
+4. **Search Function**: Use the search bar to quickly find specific events by name
+5. **Visual Feedback**: Hover over buttons to see visual feedback (color changes)
+6. **Recurring Events**: Use the recurrence feature for regular meetings or appointments
 
-## 2.1 Creating a JAR File
+## Error Handling
 
-A user should be able to run your application using a JAR file. To create a JAR file run the command ./gradlew jar. This will create a JAR file in the build/libs directory. You can run the jar using the command java -jar build/libs/JARNAME.jar. You can provide arguments after the jar file path.
+- **Invalid Timezone**: If you enter an invalid timezone, an error dialog will appear with suggestions
+- **Duplicate Calendar Names**: The system prevents creating calendars with duplicate names
+- **Invalid Date/Time**: Error messages guide you to correct format (YYYY-MM-DD for dates, HH:mm for times)
+- **Empty Required Fields**: The system prompts you to fill in required fields before saving
 
-You should assume that the user will run your program from this project's root. You must ensure that file paths that your program relies on are platform independent.
+## File Structure
 
-## 2.2 Command-line arguments
-
-Your program (from IntelliJ or the JAR file) should accept command-line inputs. Three command-line inputs are valid:
-
-* `java -jar JARNAME.jar --mode headless path-of-script-file`: when invoked in this manner the program should open the script file, execute it and then exit. Invalid commands should be handled gracefully with appropriate error messages. This is how the program worked in the previous iteration.
-
-* `java -jar JARNAME.jar --mode interactive`: when invoked in this manner the program should open in an interactive text mode, allowing the user to type the script and execute it one line at a time. This is how the program worked in the previous iteration.
-
-* `java -jar JARNAME.jar`: when invoked in this manner the program should open the graphical user interface. This is what will happen if you simply double-click on the jar file.
-
-Any other command-line arguments are invalid: in these cases the program should display an error message suitably and quit.
-
-# 3 What to submit
-
-- Submit a res/ folder with the following:
-  - A screenshot showing your GUI. 
-  - A `Misc.md` file with the following information:
-    - `A list of changes to the design of your program, along with a brief justification of each. **Describing changes only in paragraph form will result in a point deduction.**
-    - Which features work and which do not. 
-    - Anything else you need us to know when we grade.
-  - A txt file, commands.txt, with the list of valid commands.
-  - A txt file, invalid.txt with a list of commands where at least one command is invalid.
-- A USEME.md file that contains:
-  - Instructions to run your program in different modes using examples.
-  - a bullet-point list of how to use your GUI to use each operation supported by your program. Screenshots would be helpful, but not necessary.
-- The main method must be in the class 'src/main/java/CalendarRunner.java'.
-- Complete the [anonymous peer evaluation survey](https://forms.gle/11qoosf7ukmVFWuT9). You do not need to take the survey if you are working alone.
-
-# Grading Criteria
-
-1. The completeness, layout, and behavior of your GUI.
-
-2. Whether your design aligns with MVC and SOLID principles.
-
-3. Whether you have addressed issues in the previous version.
-
-4. Well-structured and clean code with relevant documentation.
-
-5. Avoid code smells wherever relevant.
-
-6. Completeness and correctness of your tests as evidenced by running them and coverage metrics for the controller and model.
-
-7. Proper access modifiers.
-
-8. Expected formatting style.
+The application expects to be run from the project root directory. All file paths are platform-independent and will work on Windows, macOS, and Linux systems.

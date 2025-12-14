@@ -21,6 +21,8 @@ Or simply double-click the JAR file.
 
 ### Calendar Management
 
+<img width="1918" height="1016" alt="Image" src="https://github.com/user-attachments/assets/86df9cc1-2277-4bde-bb48-6d5c40c75639" />
+
 #### Creating a New Calendar
 1. Click the **"Navigate calendars"** button in the toolbar
 2. Click the **"+ Create New Calendar"** button in the left panel
@@ -29,15 +31,25 @@ Or simply double-click the JAR file.
    - Enter a timezone (e.g., "America/New_York", "Europe/London")
    - Click **"Create"** to save or **"Cancel"** to close
 
+<img width="1918" height="1020" alt="Image" src="https://github.com/user-attachments/assets/5d7dd853-1e01-438f-905b-398f86fef26f" />
+  
+
+
 #### Navigating Between Calendars
 1. Click the **"Navigate calendars"** button in the toolbar
 2. All available calendars will appear in the left panel
 3. The current calendar is displayed in the toolbar as "Current: [Calendar Name] (Timezone)"
 
+<img width="1918" height="1015" alt="Image" src="https://github.com/user-attachments/assets/91ae9f2c-13d8-411c-9e00-60b82f3a346f" />
+
+
 #### Using a Calendar
 1. Click on any calendar name in the left panel
 2. Select **"Use Calendar"** from the popup menu
 3. This calendar becomes the active calendar for all operations
+
+<img width="1918" height="1017" alt="Image" src="https://github.com/user-attachments/assets/ecffdff7-50af-4d62-88f5-04f3118da294" />
+
 
 #### Editing Calendar Name
 1. Click on a calendar name in the left panel
@@ -45,11 +57,19 @@ Or simply double-click the JAR file.
 3. Enter the new name in the dialog box
 4. Click **OK** to save changes
 
+<img width="1918" height="1017" alt="Image" src="https://github.com/user-attachments/assets/40e1f3b3-3cfe-41e4-b350-b4f1a2a702de" />
+
+
+
 #### Editing Calendar Timezone
 1. Click on a calendar name in the left panel
 2. Select **"Edit Calendar Timezone"** from the popup menu
 3. Enter the new timezone (e.g., "Asia/Tokyo")
 4. Click **OK** to save changes
+
+<img width="1918" height="1017" alt="Image" src="https://github.com/user-attachments/assets/4a4a3c27-7114-4759-b005-d0b36d47353e" />
+
+
 
 ### Event Management
 
@@ -58,6 +78,10 @@ Or simply double-click the JAR file.
 2. The selected date will be highlighted in blue
 3. All events for that date will appear in the left panel
 4. Today's date is automatically highlighted when the application starts
+
+<img width="1918" height="1017" alt="Image" src="https://github.com/user-attachments/assets/96cc43fe-09b2-4987-85d0-26d0c15f5078" />
+
+
 
 #### Creating a New Event
 1. Select a date by clicking on it in the calendar
@@ -73,6 +97,10 @@ Or simply double-click the JAR file.
    - **Description**: Enter event description
 4. Click **"Create Event"** to save or **"Cancel"** to close
 
+<img width="1918" height="1017" alt="Image" src="https://github.com/user-attachments/assets/5e84799b-8628-4231-aa79-224425232adc" />
+
+
+
 #### Creating a Recurring Event
 1. Follow the steps for creating a new event
 2. Check the **"Recurring Event"** checkbox
@@ -82,6 +110,10 @@ Or simply double-click the JAR file.
      - **Until**: Select end date for recurrence
      - **No. of times**: Enter number of occurrences
 4. Click **"Create Event"** to save the series
+
+<img width="1918" height="1017" alt="Image" src="https://github.com/user-attachments/assets/0f612f75-3d9d-419a-8a3d-e1452b138719" />
+
+
 
 #### Editing an Event
 1. Select a date to view its events
@@ -93,6 +125,10 @@ Or simply double-click the JAR file.
    - This and all future events
    - (Radio buttons will be available for selection)
 6. Click **"Save Changes"** to update
+
+<img width="1512" height="945" alt="Image" src="https://github.com/user-attachments/assets/9fe13be2-9ab9-4187-b325-c213bb58318d" />
+
+
 
 ### Navigation Features
 
